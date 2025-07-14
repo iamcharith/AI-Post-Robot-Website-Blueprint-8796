@@ -50,14 +50,16 @@ const Header = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link
-              to="/login"
+            <a
+              href="https://app.aipostrobot.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-medium text-slate-gray hover:text-charcoal transition-colors"
             >
               Login
-            </Link>
+            </a>
             <Link
-              to="/signup"
+              to="/contact"
               className="btn-primary px-6 py-2 text-sm font-semibold text-white rounded-lg"
             >
               Start Free Trial
@@ -69,7 +71,10 @@ const Header = () => {
             className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <SafeIcon icon={isMenuOpen ? FiX : FiMenu} className="w-6 h-6 text-charcoal" />
+            <SafeIcon
+              icon={isMenuOpen ? FiX : FiMenu}
+              className="w-6 h-6 text-charcoal"
+            />
           </button>
         </div>
       </div>
@@ -98,15 +103,17 @@ const Header = () => {
               </Link>
             ))}
             <div className="pt-4 border-t border-gray-100 space-y-3">
-              <Link
-                to="/login"
+              <a
+                href="https://app.aipostrobot.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-sm font-medium text-slate-gray hover:text-charcoal transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
-              </Link>
+              </a>
               <Link
-                to="/signup"
+                to="/contact"
                 className="btn-primary block w-full text-center px-6 py-2 text-sm font-semibold text-white rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >

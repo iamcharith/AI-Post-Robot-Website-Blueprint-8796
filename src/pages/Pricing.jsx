@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiCheck, FiStar, FiArrowRight, FiMessageCircle, FiMail, FiPhone } = FiIcons;
+const { FiCheck, FiStar, FiArrowRight, FiMessageCircle, FiMail, FiPhone, FiFacebook, FiInstagram, FiTwitter, FiLinkedin, FiYoutube, FiGlobe, FiEdit3, FiMusic, FiCamera, FiMapPin, FiMessageSquare } = FiIcons;
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
@@ -100,7 +101,12 @@ const Pricing = () => {
       description: 'Get instant help from our support team',
       availability: 'Available 24/7',
       action: 'Start Chat',
-      note: 'Mention code LAUNCH50 for 50% off your first month'
+      note: 'Mention code LAUNCH50 for 50% off your first month',
+      onClick: () => {
+        if (window.Tawk_API) {
+          window.Tawk_API.toggle();
+        }
+      }
     },
     {
       icon: FiPhone,
@@ -108,7 +114,10 @@ const Pricing = () => {
       description: 'Direct contact for immediate assistance',
       availability: '+94 723456726',
       action: 'Contact Now',
-      note: 'Mention code LAUNCH50 for 50% off your first month'
+      note: 'Mention code LAUNCH50 for 50% off your first month',
+      onClick: () => {
+        window.open('https://wa.me/94723456726', '_blank');
+      }
     },
     {
       icon: FiMail,
@@ -116,14 +125,26 @@ const Pricing = () => {
       description: 'Send detailed questions and purchase requests',
       availability: 'contact@aipostrobot.com',
       action: 'Send Email',
-      note: 'Mention code LAUNCH50 for 50% off your first month'
+      note: 'Mention code LAUNCH50 for 50% off your first month',
+      onClick: () => {
+        window.open('mailto:contact@aipostrobot.com', '_blank');
+      }
     }
   ];
 
   const socialMediaChannels = [
-    'Facebook', 'Instagram', 'Threads', 'X (formerly Twitter)', 'TikTok', 
-    'Youtube', 'Google Business Profile', 'LinkedIn', 'Pinterest', 
-    'WordPress', 'Telegram', 'Bluesky'
+    { name: 'Facebook', icon: FiFacebook, color: '#1877F2' },
+    { name: 'Instagram', icon: FiInstagram, color: '#E4405F' },
+    { name: 'Threads', icon: FiMessageSquare, color: '#000000' },
+    { name: 'X (Twitter)', icon: FiTwitter, color: '#1DA1F2' },
+    { name: 'TikTok', icon: FiMusic, color: '#000000' },
+    { name: 'Youtube', icon: FiYoutube, color: '#FF0000' },
+    { name: 'Google Business', icon: FiGlobe, color: '#4285F4' },
+    { name: 'LinkedIn', icon: FiLinkedin, color: '#0077B5' },
+    { name: 'Pinterest', icon: FiMapPin, color: '#BD081C' },
+    { name: 'WordPress', icon: FiEdit3, color: '#21759B' },
+    { name: 'Telegram', icon: FiMessageCircle, color: '#0088CC' },
+    { name: 'Bluesky', icon: FiCamera, color: '#00A8E8' }
   ];
 
   const allFeatures = [
@@ -234,13 +255,13 @@ const Pricing = () => {
                   <div className="mb-4">
                     {plan.name === 'Lifetime' ? (
                       <div>
-                        <span className="text-4xl font-bold text-charcoal">₹{plan.price.monthly}</span>
+                        <span className="text-4xl font-bold text-charcoal">LKR {plan.price.monthly}</span>
                         <span className="text-slate-gray"> one-time</span>
                       </div>
                     ) : (
                       <div>
                         <span className="text-4xl font-bold text-charcoal">
-                          ₹{isYearly ? plan.price.yearly : plan.price.monthly}
+                          LKR {isYearly ? plan.price.yearly : plan.price.monthly}
                         </span>
                         <span className="text-slate-gray">/{isYearly ? 'year' : 'month'}</span>
                       </div>
@@ -248,7 +269,7 @@ const Pricing = () => {
                   </div>
                   {isYearly && plan.name !== 'Lifetime' && (
                     <p className="text-sm text-neon-green font-medium">
-                      Save ₹{(plan.price.monthly * 12) - plan.price.yearly} per year
+                      Save LKR {(plan.price.monthly * 12) - plan.price.yearly} per year
                     </p>
                   )}
                 </div>
@@ -262,15 +283,16 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <button
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
+                <Link
+                  to="/contact"
+                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors text-center block ${
                     plan.popular
                       ? 'btn-primary text-white'
                       : 'btn-secondary text-ai-blue hover:text-white'
                   }`}
                 >
                   {plan.cta}
-                </button>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -308,7 +330,10 @@ const Pricing = () => {
                 <div className="bg-neon-green/10 rounded-lg p-3 mb-6">
                   <p className="text-sm text-neon-green font-medium">{channel.note}</p>
                 </div>
-                <button className="btn-primary px-6 py-2 text-sm font-semibold text-white rounded-lg">
+                <button 
+                  onClick={channel.onClick}
+                  className="btn-primary px-6 py-2 text-sm font-semibold text-white rounded-lg"
+                >
                   {channel.action}
                 </button>
               </motion.div>
@@ -332,14 +357,21 @@ const Pricing = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {socialMediaChannels.map((channel, index) => (
               <motion.div
-                key={channel}
+                key={channel.name}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 text-center hover-lift"
               >
-                <div className="text-sm font-medium text-charcoal">{channel}</div>
+                <div className="flex justify-center mb-2">
+                  <SafeIcon 
+                    icon={channel.icon} 
+                    className="w-8 h-8" 
+                    style={{ color: channel.color }}
+                  />
+                </div>
+                <div className="text-sm font-medium text-charcoal">{channel.name}</div>
               </motion.div>
             ))}
           </div>
@@ -388,13 +420,19 @@ const Pricing = () => {
             Join thousands of content creators who are already dominating their social media presence with AI Post Robot.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary px-8 py-3 text-lg font-semibold text-white rounded-lg inline-flex items-center">
+            <Link
+              to="/contact"
+              className="btn-primary px-8 py-3 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center"
+            >
               <SafeIcon icon={FiMessageCircle} className="mr-2 w-5 h-5" />
               Contact Us to Get Started
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-10 transition-all">
+            </Link>
+            <Link
+              to="/features"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-10 transition-all"
+            >
               Learn More About Features
-            </button>
+            </Link>
           </div>
         </div>
       </section>

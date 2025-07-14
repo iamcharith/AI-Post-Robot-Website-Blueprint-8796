@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {motion} from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const {FiPlay,FiCalendar,FiImage,FiEdit,FiUsers,FiTrendingUp,FiZap,FiStar,FiArrowRight,FiSearch,FiCpu,FiBolt,FiClock,FiBarChart3,FiTarget,FiRefreshCw,FiActivity} = FiIcons;
+const { FiPlay, FiCalendar, FiImage, FiEdit, FiUsers, FiTrendingUp, FiZap, FiStar, FiArrowRight, FiSearch, FiCpu, FiBolt, FiClock, FiBarChart3, FiTarget, FiRefreshCw, FiActivity } = FiIcons;
 
 const Home = () => {
   const features = [
@@ -62,8 +62,8 @@ const Home = () => {
   ];
 
   const platforms = [
-    'Twitter','Instagram','Facebook','LinkedIn','TikTok','YouTube',
-    'Pinterest','Snapchat','Reddit','Discord','Telegram','WhatsApp'
+    'Twitter', 'Instagram', 'Facebook', 'LinkedIn', 'TikTok', 'YouTube',
+    'Pinterest', 'Snapchat', 'Reddit', 'Discord', 'Telegram', 'WhatsApp'
   ];
 
   const workflowSteps = [
@@ -71,56 +71,106 @@ const Home = () => {
       icon: FiSearch,
       title: 'Content Discovery',
       description: 'AI scans trending topics, competitor content, and user preferences to identify viral opportunities',
-      metrics: {value1: '1,247', label1: 'Sources', value2: '89%', label2: 'Accuracy'},
+      metrics: {
+        value1: '1,247',
+        label1: 'Sources',
+        value2: '89%',
+        label2: 'Accuracy'
+      },
       gradient: 'from-ai-blue to-blue-600'
     },
     {
       icon: FiCpu,
       title: 'AI Generation',
       description: 'Advanced AI creates optimized content including captions, hashtags, and visual elements',
-      metrics: {value1: '2.3s', label1: 'Avg Time', value2: '94%', label2: 'Quality'},
+      metrics: {
+        value1: '2.3s',
+        label1: 'Avg Time',
+        value2: '94%',
+        label2: 'Quality'
+      },
       gradient: 'from-electric-purple to-purple-600'
     },
     {
       icon: FiBolt,
       title: 'Platform Optimization',
       description: 'Content automatically adapted for each platform\'s unique requirements and audience',
-      metrics: {value1: '12', label1: 'Platforms', value2: '+247%', label2: 'Reach'},
+      metrics: {
+        value1: '12',
+        label1: 'Platforms',
+        value2: '+247%',
+        label2: 'Reach'
+      },
       gradient: 'from-neon-green to-green-600'
     },
     {
       icon: FiClock,
       title: 'Smart Scheduling',
       description: 'AI determines optimal posting times based on audience activity and engagement patterns',
-      metrics: {value1: '24/7', label1: 'Active', value2: '+156%', label2: 'Engagement'},
+      metrics: {
+        value1: '24/7',
+        label1: 'Active',
+        value2: '+156%',
+        label2: 'Engagement'
+      },
       gradient: 'from-warning-orange to-orange-600'
     },
     {
       icon: FiBarChart3,
       title: 'Analytics & Learning',
       description: 'Real-time performance tracking with AI learning to continuously improve future content',
-      metrics: {value1: 'Real-time', label1: 'Updates', value2: '+89%', label2: 'ROI'},
+      metrics: {
+        value1: 'Real-time',
+        label1: 'Updates',
+        value2: '+89%',
+        label2: 'ROI'
+      },
       gradient: 'from-red-500 to-red-600'
     }
   ];
 
   const aiFeatures = [
-    {icon: FiTarget, name: 'Trend Detection', desc: 'Real-time identification of viral opportunities', color: 'bg-ai-blue'},
-    {icon: FiZap, name: 'Content Generation', desc: 'AI creates captions, hashtags, and visuals', color: 'bg-electric-purple'},
-    {icon: FiRefreshCw, name: 'Auto-Optimization', desc: 'Continuous learning and improvement', color: 'bg-neon-green'},
-    {icon: FiClock, name: 'Smart Timing', desc: 'Optimal posting schedule prediction', color: 'bg-warning-orange'},
-    {icon: FiActivity, name: 'Performance Tracking', desc: 'Real-time analytics and insights', color: 'bg-red-500'}
+    {
+      icon: FiTarget,
+      name: 'Trend Detection',
+      desc: 'Real-time identification of viral opportunities',
+      color: 'bg-ai-blue'
+    },
+    {
+      icon: FiZap,
+      name: 'Content Generation',
+      desc: 'AI creates captions, hashtags, and visuals',
+      color: 'bg-electric-purple'
+    },
+    {
+      icon: FiRefreshCw,
+      name: 'Auto-Optimization',
+      desc: 'Continuous learning and improvement',
+      color: 'bg-neon-green'
+    },
+    {
+      icon: FiClock,
+      name: 'Smart Timing',
+      desc: 'Optimal posting schedule prediction',
+      color: 'bg-warning-orange'
+    },
+    {
+      icon: FiActivity,
+      name: 'Performance Tracking',
+      desc: 'Real-time analytics and insights',
+      color: 'bg-red-500'
+    }
   ];
 
   const performanceStats = [
-    {value: '10X', label: 'Faster Creation'},
-    {value: '247%', label: 'More Engagement'},
-    {value: '89%', label: 'Time Saved'},
-    {value: '12', label: 'Platforms'},
-    {value: '24/7', label: 'Automation'},
-    {value: '1M+', label: 'Posts Created'},
-    {value: '98%', label: 'Client Retention'},
-    {value: '5★', label: 'Average Rating'}
+    { value: '10X', label: 'Faster Creation' },
+    { value: '247%', label: 'More Engagement' },
+    { value: '89%', label: 'Time Saved' },
+    { value: '12', label: 'Platforms' },
+    { value: '24/7', label: 'Automation' },
+    { value: '1M+', label: 'Posts Created' },
+    { value: '98%', label: 'Client Retention' },
+    { value: '5★', label: 'Average Rating' }
   ];
 
   return (
@@ -130,43 +180,48 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.h1
-              initial={{opacity: 0, y: 30}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.8}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl font-bold mb-6"
             >
               One-Click AI-Powered <br /> Social Media Management
             </motion.h1>
             <motion.p
-              initial={{opacity: 0, y: 30}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.8, delay: 0.2}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90"
             >
               Create, schedule, and post directly from your browser. The ultimate tool for content creators who want to dominate across platforms without the hassle.
             </motion.p>
             <motion.div
-              initial={{opacity: 0, y: 30}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.8, delay: 0.4}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
               <Link
-                to="/signup"
+                to="/contact"
                 className="btn-primary px-8 py-4 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center"
               >
                 Start Free Trial
                 <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
               </Link>
-              <button className="btn-secondary px-8 py-4 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center">
+              <a
+                href="https://www.youtube.com/@wcharithharshana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary px-8 py-4 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center"
+              >
                 <SafeIcon icon={FiPlay} className="mr-2 w-5 h-5" />
                 Watch Demo
-              </button>
+              </a>
             </motion.div>
             <motion.div
-              initial={{opacity: 0, y: 30}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.8, delay: 0.6}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="grid grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto"
             >
               {platforms.map((platform, index) => (
@@ -184,19 +239,19 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2
-              initial={{opacity: 0, y: 30}}
-              whileInView={{opacity: 1, y: 0}}
-              transition={{duration: 0.8}}
-              viewport={{once: true}}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-4xl md:text-5xl font-bold text-charcoal mb-6"
             >
               🚀 Content Creation Pipeline
             </motion.h2>
             <motion.p
-              initial={{opacity: 0, y: 30}}
-              whileInView={{opacity: 1, y: 0}}
-              transition={{duration: 0.8, delay: 0.2}}
-              viewport={{once: true}}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
               className="text-xl text-slate-gray"
             >
               AI-Powered Multi-Platform Content Generation & Distribution System
@@ -208,10 +263,10 @@ const Home = () => {
             {workflowSteps.map((step, index) => (
               <motion.div
                 key={step.title}
-                initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.6, delay: index * 0.1}}
-                viewport={{once: true}}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 text-center hover-lift shadow-lg border-t-4 border-transparent hover:border-ai-blue transition-all duration-300"
               >
                 <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${step.gradient} flex items-center justify-center`}>
@@ -237,10 +292,10 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* AI Features */}
             <motion.div
-              initial={{opacity: 0, x: -30}}
-              whileInView={{opacity: 1, x: 0}}
-              transition={{duration: 0.8}}
-              viewport={{once: true}}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="bg-white rounded-2xl p-8 shadow-lg"
             >
               <h3 className="text-2xl font-bold text-charcoal mb-6 flex items-center">
@@ -250,10 +305,10 @@ const Home = () => {
                 {aiFeatures.map((feature, index) => (
                   <motion.div
                     key={feature.name}
-                    initial={{opacity: 0, x: -20}}
-                    whileInView={{opacity: 1, x: 0}}
-                    transition={{duration: 0.6, delay: index * 0.1}}
-                    viewport={{once: true}}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                     className="flex items-center gap-4 p-3 rounded-lg hover:bg-light-gray transition-colors"
                   >
                     <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
@@ -270,10 +325,10 @@ const Home = () => {
 
             {/* Performance Stats */}
             <motion.div
-              initial={{opacity: 0, x: 30}}
-              whileInView={{opacity: 1, x: 0}}
-              transition={{duration: 0.8}}
-              viewport={{once: true}}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="bg-white rounded-2xl p-8 shadow-lg"
             >
               <h3 className="text-2xl font-bold text-charcoal mb-6 flex items-center">
@@ -283,10 +338,10 @@ const Home = () => {
                 {performanceStats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
-                    initial={{opacity: 0, scale: 0.8}}
-                    whileInView={{opacity: 1, scale: 1}}
-                    transition={{duration: 0.6, delay: index * 0.1}}
-                    viewport={{once: true}}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                     className="bg-light-gray rounded-xl p-4 text-center hover-lift"
                   >
                     <div className="text-2xl font-bold text-ai-blue mb-1">{stat.value}</div>
@@ -314,10 +369,10 @@ const Home = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.6, delay: index * 0.1}}
-                viewport={{once: true}}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="bg-white rounded-xl p-6 hover-lift"
               >
                 <div className="w-12 h-12 bg-hero-gradient rounded-lg flex items-center justify-center mb-4">
@@ -346,14 +401,18 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.handle}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.6, delay: index * 0.1}}
-                viewport={{once: true}}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="bg-white rounded-xl p-6 hover-lift border border-gray-100"
               >
                 <div className="flex items-center mb-4">
-                  <img src={testimonial.avatar} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4" />
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full mr-4"
+                  />
                   <div>
                     <h4 className="font-semibold text-charcoal">{testimonial.name}</h4>
                     <p className="text-ai-blue text-sm">{testimonial.handle}</p>
@@ -375,10 +434,10 @@ const Home = () => {
       <section className="section-padding bg-charcoal text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{opacity: 0, y: 30}}
-            whileInView={{opacity: 1, y: 0}}
-            transition={{duration: 0.8}}
-            viewport={{once: true}}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Level Up?
@@ -386,13 +445,21 @@ const Home = () => {
             <p className="text-xl mb-8 opacity-90">
               Stop wasting time on manual posting. Let Ai Post Robot handle the heavy lifting while you focus on creating amazing content.
             </p>
-            <Link
-              to="/signup"
-              className="btn-primary px-12 py-4 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center"
-            >
-              Get Started Now - Free Trial
-              <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="btn-primary px-12 py-4 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center"
+              >
+                Get Started Now - Free Trial
+                <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
+              </Link>
+              <Link
+                to="/pricing"
+                className="border-2 border-white text-white px-12 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-charcoal transition-all"
+              >
+                View Pricing
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

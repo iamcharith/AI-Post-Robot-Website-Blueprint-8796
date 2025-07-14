@@ -1,22 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const {
-  FiTarget,
-  FiCalendar,
-  FiImage,
-  FiCpu,
-  FiEdit3,
-  FiFolder,
-  FiArrowRight,
-  FiZap,
-  FiStar,
-  FiTrendingUp,
-  FiUsers,
-  FiRefreshCw
-} = FiIcons;
+const { FiTarget, FiCalendar, FiImage, FiCpu, FiEdit3, FiFolder, FiArrowRight, FiZap, FiStar, FiTrendingUp, FiUsers, FiRefreshCw } = FiIcons;
 
 const mainFeatures = [
   {
@@ -153,8 +141,12 @@ const Features = () => {
                       <div key={i} className="w-1.5 h-1.5 bg-white/50 rounded-full"></div>
                     ))}
                   </div>
-                  <a href={`#${feature.title.toLowerCase().replace(/\s+/g, '-')}`} className="text-sm font-medium flex items-center">
-                    Learn more <SafeIcon icon={FiArrowRight} className="ml-1 w-4 h-4" />
+                  <a
+                    href={`#${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="text-sm font-medium flex items-center"
+                  >
+                    Learn more
+                    <SafeIcon icon={FiArrowRight} className="ml-1 w-4 h-4" />
                   </a>
                 </div>
               </motion.div>
@@ -194,12 +186,18 @@ const Features = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button className="bg-white text-ai-blue px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+            <Link
+              to="/contact"
+              className="bg-white text-ai-blue px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+            >
               Get Started Free
-            </button>
-            <button className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all">
+            </Link>
+            <Link
+              to="/pricing"
+              className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all"
+            >
               View Pricing Plans
-            </button>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -215,7 +213,6 @@ const Features = () => {
               Discover how our powerful tools can transform your social media workflow
             </p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
@@ -285,7 +282,6 @@ const Features = () => {
               Explore every powerful capability of the Ai Post Robot browser extension.
             </p>
           </div>
-
           <div className="space-y-24">
             {mainFeatures.map((feature, index) => (
               <motion.div
@@ -294,7 +290,9 @@ const Features = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}
+                className={`flex flex-col ${
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                } items-center gap-12`}
                 id={feature.title.toLowerCase().replace(/\s+/g, '-')}
               >
                 <div className="flex-1">
@@ -318,7 +316,11 @@ const Features = () => {
                 </div>
                 <div className="flex-1">
                   <div className="rounded-2xl overflow-hidden shadow-2xl">
-                    <img src={feature.image} alt={feature.title} className="w-full h-80 object-cover" />
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-80 object-cover"
+                    />
                   </div>
                 </div>
               </motion.div>

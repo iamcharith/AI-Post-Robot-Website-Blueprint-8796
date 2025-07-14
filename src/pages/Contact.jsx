@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiMessageCircle, FiMail, FiStar, FiSend, FiClock, FiMapPin, FiTwitter, FiInstagram, FiLinkedin } = FiIcons;
+const { FiMessageCircle, FiMail, FiStar, FiSend, FiClock, FiMapPin, FiTwitter, FiInstagram, FiLinkedin, FiPhone } = FiIcons;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -33,21 +33,32 @@ const Contact = () => {
       title: 'Live Chat',
       description: 'Get instant help from our support team',
       availability: 'Available 24/7',
-      cta: 'Start Chat'
+      cta: 'Start Chat',
+      onClick: () => {
+        if (window.Tawk_API) {
+          window.Tawk_API.toggle();
+        }
+      }
     },
     {
       icon: FiMail,
       title: 'Email Support',
       description: 'Send us detailed questions and feedback',
       availability: 'Response within 24 hours',
-      cta: 'Send Email'
+      cta: 'Send Email',
+      onClick: () => {
+        window.open('mailto:contact@aipostrobot.com', '_blank');
+      }
     },
     {
       icon: FiStar,
       title: 'Priority Support',
       description: 'Premium support for Pro plan users',
       availability: 'Response within 2 hours',
-      cta: 'Contact Priority'
+      cta: 'Contact Priority',
+      onClick: () => {
+        window.location.href = '#contact-form';
+      }
     }
   ];
 
@@ -97,13 +108,25 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button className="btn-primary px-8 py-3 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center">
+            <button
+              onClick={() => {
+                if (window.Tawk_API) {
+                  window.Tawk_API.toggle();
+                }
+              }}
+              className="btn-primary px-8 py-3 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center"
+            >
               <SafeIcon icon={FiMessageCircle} className="mr-2 w-5 h-5" />
               Start Live Chat
             </button>
-            <button className="btn-secondary px-8 py-3 text-lg font-semibold text-ai-blue rounded-lg inline-flex items-center justify-center">
+            <a
+              href="https://aipostrobot.tawk.help/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary px-8 py-3 text-lg font-semibold text-ai-blue rounded-lg inline-flex items-center justify-center"
+            >
               Visit Help Center
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -135,7 +158,10 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-charcoal mb-4">{channel.title}</h3>
                 <p className="text-slate-gray mb-4">{channel.description}</p>
                 <p className="text-sm text-neon-green font-medium mb-6">{channel.availability}</p>
-                <button className="btn-primary px-6 py-2 text-sm font-semibold text-white rounded-lg">
+                <button
+                  onClick={channel.onClick}
+                  className="btn-primary px-6 py-2 text-sm font-semibold text-white rounded-lg"
+                >
                   {channel.cta}
                 </button>
               </motion.div>
@@ -145,7 +171,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="section-padding bg-light-gray">
+      <section id="contact-form" className="section-padding bg-light-gray">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">
@@ -195,6 +221,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="planType" className="block text-sm font-medium text-charcoal mb-2">
@@ -208,10 +235,9 @@ const Contact = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ai-blue focus:border-transparent"
                   >
                     <option value="">Select your plan</option>
-                    <option value="starter">Starter (Free)</option>
-                    <option value="creator">Creator</option>
-                    <option value="pro">Pro</option>
-                    <option value="enterprise">Enterprise</option>
+                    <option value="early">Early Plan</option>
+                    <option value="monthly">Monthly Plan</option>
+                    <option value="lifetime">Lifetime</option>
                   </select>
                 </div>
                 <div>
@@ -230,6 +256,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-2">
                   Message *
@@ -245,6 +272,7 @@ const Contact = () => {
                   placeholder="Tell us how we can help you..."
                 />
               </div>
+
               <div className="text-center">
                 <button
                   type="submit"
@@ -297,7 +325,7 @@ const Contact = () => {
       {/* Company Info */}
       <section className="section-padding bg-charcoal text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <SafeIcon icon={FiClock} className="w-12 h-12 mx-auto mb-4 text-electric-purple" />
               <h3 className="text-xl font-semibold mb-2">Business Hours</h3>
@@ -307,8 +335,14 @@ const Contact = () => {
             <div className="text-center">
               <SafeIcon icon={FiMapPin} className="w-12 h-12 mx-auto mb-4 text-electric-purple" />
               <h3 className="text-xl font-semibold mb-2">Location</h3>
-              <p className="text-slate-gray">San Francisco, CA</p>
-              <p className="text-slate-gray">Remote-first company</p>
+              <p className="text-slate-gray">#10/D, Gamunupura 1st Ln</p>
+              <p className="text-slate-gray">Kaduwela, Sri Lanka</p>
+            </div>
+            <div className="text-center">
+              <SafeIcon icon={FiPhone} className="w-12 h-12 mx-auto mb-4 text-electric-purple" />
+              <h3 className="text-xl font-semibold mb-2">Contact Info</h3>
+              <p className="text-slate-gray">Phone: +94 77 726 8985</p>
+              <p className="text-slate-gray">WhatsApp: +94 723456726</p>
             </div>
             <div className="text-center">
               <div className="flex justify-center space-x-4 mb-4">

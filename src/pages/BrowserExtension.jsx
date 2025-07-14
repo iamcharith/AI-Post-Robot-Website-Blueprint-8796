@@ -1,23 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { 
-  FiArrowRight, 
-  FiRefreshCw, 
-  FiEdit3, 
-  FiTarget, 
-  FiCalendar,
-  FiImage, 
-  FiCpu, 
-  FiEdit, 
-  FiFolder,
-  FiClock,
-  FiGlobe,
-  FiLayers,
-  FiStar
-} = FiIcons;
+const { FiArrowRight, FiRefreshCw, FiEdit3, FiTarget, FiCalendar, FiImage, FiCpu, FiEdit, FiFolder, FiClock, FiGlobe, FiLayers, FiStar, FiPlay } = FiIcons;
 
 const BrowserExtension = () => {
   const [isPublishing, setIsPublishing] = useState(false);
@@ -27,7 +14,7 @@ const BrowserExtension = () => {
     setIsPublishing(true);
     setTimeout(() => setIsPublishing(false), 3000);
   };
-  
+
   // Key features data
   const keyFeatures = [
     {
@@ -104,107 +91,21 @@ const BrowserExtension = () => {
       ]
     }
   ];
-  
+
   // Platforms data
   const platforms = [
-    {
-      name: 'Instagram',
-      subtext: 'Stories & Reels',
-      icon: '📷',
-      status: 'Connected',
-      followers: '456K',
-      engagement: '8.9%',
-      color: 'linear-gradient(135deg, #E4405F, #C13584)'
-    },
-    {
-      name: 'Facebook',
-      subtext: 'Stories & Reels',
-      icon: '📘',
-      status: 'Connected',
-      followers: '345K',
-      engagement: '4.2%',
-      color: 'linear-gradient(135deg, #1877F2, #166fe5)'
-    },
-    {
-      name: 'X (Twitter)',
-      icon: '🐦',
-      status: 'Connected',
-      followers: '234K',
-      engagement: '12.3%',
-      color: 'linear-gradient(135deg, #1DA1F2, #0d8bd9)'
-    },
-    {
-      name: 'TikTok',
-      icon: '🎵',
-      status: 'Connected',
-      followers: '789K',
-      engagement: '15.7%',
-      color: 'linear-gradient(135deg, #000000, #333333)'
-    },
-    {
-      name: 'LinkedIn',
-      icon: '💼',
-      status: 'Connected',
-      followers: '123K',
-      engagement: '6.8%',
-      color: 'linear-gradient(135deg, #0077B5, #005885)'
-    },
-    {
-      name: 'YouTube',
-      icon: '📺',
-      status: 'Connected',
-      followers: '567K',
-      engagement: '7.9%',
-      color: 'linear-gradient(135deg, #FF0000, #cc0000)'
-    },
-    {
-      name: 'Pinterest',
-      icon: '📌',
-      status: 'Connected',
-      followers: '89K',
-      engagement: '11.2%',
-      color: 'linear-gradient(135deg, #BD081C, #9a0615)'
-    },
-    {
-      name: 'Threads',
-      icon: '🧵',
-      status: 'Connected',
-      followers: '67K',
-      engagement: '9.4%',
-      color: 'linear-gradient(135deg, #000000, #333333)'
-    },
-    {
-      name: 'WordPress',
-      icon: '📝',
-      status: 'Connected',
-      followers: '23K',
-      engagement: '5.8%',
-      color: 'linear-gradient(135deg, #21759B, #1a5f7a)'
-    },
-    {
-      name: 'Telegram',
-      icon: '✈️',
-      status: 'Connected',
-      followers: '45K',
-      engagement: '13.6%',
-      color: 'linear-gradient(135deg, #0088cc, #006699)'
-    },
-    {
-      name: 'Google Business',
-      icon: '🏢',
-      status: 'Connected',
-      followers: '12K',
-      engagement: '8.3%',
-      color: 'linear-gradient(135deg, #4285F4, #3367d6)'
-    },
-    {
-      name: 'Bluesky',
-      icon: '🦋',
-      status: 'Connected',
-      followers: '8K',
-      engagement: '14.2%',
-      color: 'linear-gradient(135deg, #00A8E8, #0077b6)'
-    }
+    { name: 'Instagram', subtext: 'Stories & Reels', icon: '📷', status: 'Connected', followers: '456K', engagement: '8.9%', color: 'linear-gradient(135deg, #E4405F, #C13584)' },
+    { name: 'Facebook', subtext: 'Stories & Reels', icon: '📘', status: 'Connected', followers: '345K', engagement: '4.2%', color: 'linear-gradient(135deg, #1877F2, #166fe5)' },
+    { name: 'X (Twitter)', icon: '🐦', status: 'Connected', followers: '234K', engagement: '12.3%', color: 'linear-gradient(135deg, #1DA1F2, #0d8bd9)' },
+    { name: 'TikTok', icon: '🎵', status: 'Connected', followers: '789K', engagement: '15.7%', color: 'linear-gradient(135deg, #000000, #333333)' },
+    { name: 'LinkedIn', icon: '💼', status: 'Connected', followers: '123K', engagement: '6.8%', color: 'linear-gradient(135deg, #0077B5, #005885)' },
+    { name: 'YouTube', icon: '📺', status: 'Connected', followers: '567K', engagement: '7.9%', color: 'linear-gradient(135deg, #FF0000, #cc0000)' },
+    { name: 'Pinterest', icon: '📌', status: 'Connected', followers: '89K', engagement: '11.2%', color: 'linear-gradient(135deg, #BD081C, #9a0615)' },
+    { name: 'Threads', icon: '🧵', status: 'Connected', followers: '67K', engagement: '9.4%', color: 'linear-gradient(135deg, #000000, #333333)' },
+    { name: 'WordPress', icon: '📝', status: 'Connected', followers: '23K', engagement: '5.8%', color: 'linear-gradient(135deg, #21759B, #1a5f7a)' },
+    { name: 'Telegram', icon: '✈️', status: 'Connected', followers: '45K', engagement: '13.6%', color: 'linear-gradient(135deg, #0088cc, #006699)' },
+    { name: 'Google Business', icon: '🏢', status: 'Connected', followers: '12K', engagement: '8.3%', color: 'linear-gradient(135deg, #4285F4, #3367d6)' },
+    { name: 'Bluesky', icon: '🦋', status: 'Connected', followers: '8K', engagement: '14.2%', color: 'linear-gradient(135deg, #00A8E8, #0077b6)' }
   ];
 
   // Feature tabs
@@ -286,12 +187,21 @@ const BrowserExtension = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="btn-primary px-8 py-3 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center">
-                Install Extension <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
-              </button>
-              <button className="btn-secondary px-8 py-3 text-lg font-semibold text-ai-blue rounded-lg inline-flex items-center justify-center">
+              <a
+                href="https://github.com/charithharshana/AI-Post-Robot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary px-8 py-3 text-lg font-semibold text-white rounded-lg inline-flex items-center justify-center"
+              >
+                Install Extension
+                <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
+              </a>
+              <Link
+                to="/features"
+                className="btn-secondary px-8 py-3 text-lg font-semibold text-ai-blue rounded-lg inline-flex items-center justify-center"
+              >
                 Learn More
-              </button>
+              </Link>
             </motion.div>
           </div>
 
@@ -328,17 +238,43 @@ const BrowserExtension = () => {
               ))}
             </div>
             <div className="text-center mt-8">
-              <motion.button
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="btn-primary px-8 py-3 text-white font-semibold rounded-lg inline-flex items-center"
+                className="space-y-4"
               >
-                Explore All Features <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
-              </motion.button>
+                <Link
+                  to="/features"
+                  className="btn-primary px-8 py-3 text-white font-semibold rounded-lg inline-flex items-center mr-4"
+                >
+                  Explore All Features
+                  <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
+                </Link>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="https://github.com/charithharshana/AI-Post-Robot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary px-6 py-2 text-ai-blue font-semibold rounded-lg inline-flex items-center justify-center"
+                  >
+                    Install Extension
+                    <SafeIcon icon={FiArrowRight} className="ml-2 w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@wcharithharshana"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary px-6 py-2 text-ai-blue font-semibold rounded-lg inline-flex items-center justify-center"
+                  >
+                    <SafeIcon icon={FiPlay} className="mr-2 w-4 h-4" />
+                    Watch Demo
+                  </a>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
-          
+
           {/* Platform Management */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -355,7 +291,6 @@ const BrowserExtension = () => {
               </h2>
               <p className="text-lg text-slate-gray">One Dashboard, 12+ Platforms, Unlimited Reach</p>
             </div>
-            
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
               {/* AI Content Creator */}
               <div className="lg:col-span-2 bg-gradient-to-br from-light-gray to-gray-50 rounded-xl p-4 border border-gray-200 relative">
@@ -364,20 +299,20 @@ const BrowserExtension = () => {
                     ✨ AI Content Creator
                   </h3>
                 </div>
-                
                 <div className="bg-white rounded-lg p-4 mb-4 border border-gray-200">
                   <div className="w-full h-20 bg-hero-gradient rounded-lg mb-3 flex items-center justify-center text-2xl text-white relative overflow-hidden">
                     🎯
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-3 mb-3">
-                    <div className="text-charcoal text-sm min-h-8 flex items-center">Boost your social media presence with AI-powered content creation that automatically adapts to each platform's unique requirements, leverages trending topics, and maintains your brand's distinctive voice across all channels<span className="inline-block w-0.5 h-4 bg-ai-blue ml-1 animate-pulse"></span></div>
+                    <div className="text-charcoal text-sm min-h-8 flex items-center">
+                      Boost your social media presence with AI-powered content creation that automatically adapts to each platform's unique requirements, leverages trending topics, and maintains your brand's distinctive voice across all channels
+                      <span className="inline-block w-0.5 h-4 bg-ai-blue ml-1 animate-pulse"></span>
+                    </div>
                     <p className="text-slate-gray text-sm mt-2 mb-2"></p>
                     <div className="text-slate-gray text-xs mb-2">
-                      ✓ Multi-platform optimization
-                      <br />
-                      ✓ Brand voice consistency
-                      <br />
+                      ✓ Multi-platform optimization <br />
+                      ✓ Brand voice consistency <br />
                       ✓ Engagement-focused content
                     </div>
                     <div className="flex flex-wrap gap-1 mt-2">
@@ -388,8 +323,7 @@ const BrowserExtension = () => {
                     </div>
                   </div>
                 </div>
-                
-                <button 
+                <button
                   onClick={handlePublish}
                   className="w-full bg-gradient-to-r from-neon-green to-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-md transition-all duration-300 text-sm flex items-center justify-center"
                 >
@@ -405,13 +339,12 @@ const BrowserExtension = () => {
                     </>
                   )}
                 </button>
-                
                 <div className="absolute -top-2 -right-2 bg-gradient-to-r from-electric-purple to-purple-600 text-white px-3 py-1 rounded-xl text-xs font-semibold flex items-center gap-1">
                   <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   AI Processing...
                 </div>
               </div>
-              
+
               {/* Platforms Grid */}
               <div className="lg:col-span-3">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -424,7 +357,7 @@ const BrowserExtension = () => {
                       viewport={{ once: true }}
                       className="bg-white rounded-lg p-3 shadow-sm border transition-all duration-300 relative overflow-hidden border-warning-orange bg-orange-50"
                     >
-                      <div 
+                      <div
                         className="w-8 h-8 rounded-lg flex items-center justify-center text-sm text-white mb-2 mx-auto"
                         style={{ background: platform.color }}
                       >
@@ -450,7 +383,7 @@ const BrowserExtension = () => {
               </div>
             </div>
           </motion.div>
-          
+
           {/* Key Features Section */}
           <div className="mb-16">
             <div className="text-center mb-10">
@@ -459,7 +392,7 @@ const BrowserExtension = () => {
                 Discover all the powerful capabilities that make our browser extension the ultimate tool for content creators
               </p>
             </div>
-            
+
             {/* Feature Tabs */}
             <div className="flex flex-wrap justify-center gap-2 mb-8 overflow-x-auto pb-2">
               {featureTabs.map(tab => (
@@ -476,7 +409,7 @@ const BrowserExtension = () => {
                 </button>
               ))}
             </div>
-            
+
             {/* Feature Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {keyFeatures.map((feature, index) => (
@@ -493,7 +426,6 @@ const BrowserExtension = () => {
                   </div>
                   <h3 className="text-xl font-semibold text-charcoal mb-2">{feature.title}</h3>
                   <p className="text-slate-gray mb-4">{feature.description}</p>
-                  
                   <div className="space-y-2">
                     {feature.details.map((detail, detailIndex) => (
                       <div key={detailIndex} className="flex items-start">
@@ -506,259 +438,7 @@ const BrowserExtension = () => {
               ))}
             </div>
           </div>
-          
-          {/* Feature Spotlight Section */}
-          <div className="mb-16">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-charcoal mb-4">Feature Spotlight</h2>
-              <p className="text-lg text-slate-gray max-w-3xl mx-auto">
-                Take a closer look at our most powerful features
-              </p>
-            </div>
-            
-            {/* AI Image Generator Feature */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-12"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-electric-purple to-ai-blue rounded-lg flex items-center justify-center mr-4">
-                      <SafeIcon icon={FiImage} className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-charcoal">AI Image+ Generator</h3>
-                  </div>
-                  
-                  <p className="text-slate-gray mb-6">
-                    Our revolutionary AI image generator powered by Google Gemini creates stunning visuals for your content with just a few clicks.
-                  </p>
-                  
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start">
-                      <div className="w-6 h-6 bg-neon-green rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 flex-shrink-0">1</div>
-                      <div>
-                        <h4 className="font-semibold text-charcoal">Multi-Image Generation</h4>
-                        <p className="text-sm text-slate-gray">Create unlimited variations with a single prompt</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <div className="w-6 h-6 bg-neon-green rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 flex-shrink-0">2</div>
-                      <div>
-                        <h4 className="font-semibold text-charcoal">Interactive Chatbox</h4>
-                        <p className="text-sm text-slate-gray">Natural conversation interface for image creation</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <div className="w-6 h-6 bg-neon-green rounded-full flex items-center justify-center text-white text-xs font-bold mr-3 flex-shrink-0">3</div>
-                      <div>
-                        <h4 className="font-semibold text-charcoal">25+ Predefined Prompts</h4>
-                        <p className="text-sm text-slate-gray">Categorized prompts for various image types and styles</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <button className="btn-primary px-6 py-3 text-white font-semibold rounded-lg inline-flex items-center">
-                    Try AI Image Generator <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
-                  </button>
-                </div>
-                
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-electric-purple/10 to-ai-blue/10 rounded-xl p-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white rounded-lg p-2 shadow-md">
-                        <div className="bg-gray-100 rounded h-32 mb-2 overflow-hidden">
-                          <div className="w-full h-full bg-gradient-to-br from-electric-purple/30 to-ai-blue/30 animate-pulse"></div>
-                        </div>
-                        <div className="text-xs text-slate-gray">AI-generated social post</div>
-                      </div>
-                      <div className="bg-white rounded-lg p-2 shadow-md">
-                        <div className="bg-gray-100 rounded h-32 mb-2 overflow-hidden">
-                          <div className="w-full h-full bg-gradient-to-br from-neon-green/30 to-ai-blue/30 animate-pulse"></div>
-                        </div>
-                        <div className="text-xs text-slate-gray">Product showcase</div>
-                      </div>
-                      <div className="bg-white rounded-lg p-2 shadow-md">
-                        <div className="bg-gray-100 rounded h-32 mb-2 overflow-hidden">
-                          <div className="w-full h-full bg-gradient-to-br from-warning-orange/30 to-electric-purple/30 animate-pulse"></div>
-                        </div>
-                        <div className="text-xs text-slate-gray">Brand illustration</div>
-                      </div>
-                      <div className="bg-white rounded-lg p-2 shadow-md">
-                        <div className="bg-gray-100 rounded h-32 mb-2 overflow-hidden">
-                          <div className="w-full h-full bg-gradient-to-br from-ai-blue/30 to-neon-green/30 animate-pulse"></div>
-                        </div>
-                        <div className="text-xs text-slate-gray">Custom banner</div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4 bg-white rounded-lg p-3 shadow-md">
-                      <div className="flex items-center mb-2">
-                        <div className="w-6 h-6 bg-hero-gradient rounded-full flex items-center justify-center mr-2">
-                          <span className="text-white text-xs">🤖</span>
-                        </div>
-                        <div className="text-sm font-medium">AI Prompt Assistant</div>
-                      </div>
-                      <div className="bg-gray-50 rounded p-2 text-xs text-slate-gray">
-                        Create a vibrant social media post about digital marketing with modern abstract elements
-                        <span className="inline-block w-0.5 h-3 bg-ai-blue ml-1 animate-pulse"></span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute -top-4 -right-4 bg-electric-purple text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    Google Gemini Powered
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            {/* Advanced Scheduling System */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="order-2 lg:order-1 relative">
-                  <div className="bg-gradient-to-br from-neon-green/10 to-ai-blue/10 rounded-xl p-6">
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                      <div className="bg-hero-gradient px-4 py-2 text-white text-sm font-medium">
-                        Advanced Scheduling Calendar
-                      </div>
-                      
-                      <div className="p-4">
-                        <div className="grid grid-cols-7 gap-1 mb-2">
-                          {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
-                            <div key={i} className="text-center text-xs font-medium text-slate-gray">
-                              {day}
-                            </div>
-                          ))}
-                        </div>
-                        
-                        <div className="grid grid-cols-7 gap-1">
-                          {Array.from({ length: 35 }).map((_, i) => {
-                            const day = i - 2;
-                            const isToday = day === 15;
-                            const hasPost = [3, 7, 12, 15, 19, 23, 27].includes(day);
-                            const isOptimal = [7, 15, 23].includes(day);
-                            
-                            return (
-                              <div 
-                                key={i} 
-                                className={`
-                                  h-10 rounded-lg flex items-center justify-center text-xs relative
-                                  ${day < 1 || day > 30 ? 'text-gray-300' : 'text-charcoal'}
-                                  ${isToday ? 'bg-ai-blue text-white font-bold' : ''}
-                                  ${hasPost && !isToday ? 'bg-light-gray' : ''}
-                                `}
-                              >
-                                {day > 0 && day <= 30 ? day : ''}
-                                {hasPost && (
-                                  <div className={`absolute bottom-1 w-1 h-1 rounded-full ${isOptimal ? 'bg-neon-green' : 'bg-warning-orange'}`}></div>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                      
-                      <div className="border-t border-gray-100 p-3">
-                        <div className="flex items-center justify-between text-xs">
-                          <div className="flex items-center">
-                            <div className="w-2 h-2 bg-warning-orange rounded-full mr-1"></div>
-                            <span className="text-slate-gray">Scheduled (8)</span>
-                          </div>
-                          <div className="flex items-center">
-                            <div className="w-2 h-2 bg-neon-green rounded-full mr-1"></div>
-                            <span className="text-slate-gray">Optimal time (3)</span>
-                          </div>
-                          <div className="flex items-center">
-                            <SafeIcon icon={FiClock} className="w-3 h-3 text-ai-blue mr-1" />
-                            <span className="text-slate-gray">Auto-scheduled</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4 grid grid-cols-3 gap-2">
-                      <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-100">
-                        <div className="text-xs font-medium text-charcoal mb-1">Fixed Time</div>
-                        <div className="text-xs text-slate-gray">9:00 AM Daily</div>
-                      </div>
-                      <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-100">
-                        <div className="text-xs font-medium text-charcoal mb-1">Random Time</div>
-                        <div className="text-xs text-slate-gray">9-11 AM Range</div>
-                      </div>
-                      <div className="bg-white rounded-lg p-2 shadow-sm border border-neon-green">
-                        <div className="text-xs font-medium text-charcoal mb-1">AI Optimal</div>
-                        <div className="text-xs text-neon-green">Best Engagement</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="order-1 lg:order-2">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-neon-green to-ai-blue rounded-lg flex items-center justify-center mr-4">
-                      <SafeIcon icon={FiCalendar} className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-charcoal">Advanced Scheduling System</h3>
-                  </div>
-                  
-                  <p className="text-slate-gray mb-6">
-                    Our professional-grade scheduling system uses AI to find the perfect time to post for maximum engagement across all platforms.
-                  </p>
-                  
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start">
-                      <SafeIcon icon={FiGlobe} className="w-5 h-5 text-ai-blue mr-3 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-charcoal">AI Post Robot Integration</h4>
-                        <p className="text-sm text-slate-gray">Direct API integration for automated posting</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <SafeIcon icon={FiLayers} className="w-5 h-5 text-ai-blue mr-3 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-charcoal">Professional Interface</h4>
-                        <p className="text-sm text-slate-gray">Visual post management with bulk operations</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <SafeIcon icon={FiClock} className="w-5 h-5 text-ai-blue mr-3 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-charcoal">Smart Scheduling</h4>
-                        <p className="text-sm text-slate-gray">Fixed, random, and optimal timing algorithms</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <SafeIcon icon={FiStar} className="w-5 h-5 text-ai-blue mr-3 mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-charcoal">Album Support & Instant Publishing</h4>
-                        <p className="text-sm text-slate-gray">Create and schedule photo albums or publish immediately</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <button className="btn-primary px-6 py-3 text-white font-semibold rounded-lg inline-flex items-center">
-                    Explore Scheduling Features <SafeIcon icon={FiArrowRight} className="ml-2 w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          
+
           {/* Quick Features Summary */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <motion.div
@@ -774,7 +454,7 @@ const BrowserExtension = () => {
               <h3 className="text-xl font-semibold text-charcoal mb-2">Content Capture</h3>
               <p className="text-slate-gray">Right-click any content online and save it directly to your scheduling queue with one click.</p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -788,7 +468,7 @@ const BrowserExtension = () => {
               <h3 className="text-xl font-semibold text-charcoal mb-2">Auto-Optimization</h3>
               <p className="text-slate-gray">AI automatically optimizes your content for each platform's specific requirements and audience.</p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -803,7 +483,7 @@ const BrowserExtension = () => {
               <p className="text-slate-gray">Schedule or publish your content across all platforms with a single click, saving hours of manual work.</p>
             </motion.div>
           </div>
-          
+
           {/* CTA Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -817,12 +497,22 @@ const BrowserExtension = () => {
               Install the Ai Post Robot browser extension today and start creating, scheduling, and publishing content like a pro.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-ai-blue px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+              <a
+                href="https://github.com/charithharshana/AI-Post-Robot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-ai-blue px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+              >
                 Install Extension
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-10 transition-all">
+              </a>
+              <a
+                href="https://www.youtube.com/@wcharithharshana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-10 transition-all"
+              >
                 Watch Demo
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
