@@ -8,6 +8,9 @@ import Features from './pages/Features';
 import Pricing from './pages/Pricing';
 import BrowserExtension from './pages/BrowserExtension';
 import Contact from './pages/Contact';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import DMCA from './pages/DMCA';
 import './App.css';
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/browser-extension" element={<BrowserExtension />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/dmca" element={<DMCA />} />
           </Routes>
         </motion.main>
         <Footer />
