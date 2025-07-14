@@ -218,6 +218,46 @@ const BrowserExtension = () => {
     { id: 'management', label: 'Content Management' }
   ];
 
+  // Core features for hero section
+  const coreFeatures = [
+    {
+      icon: FiImage,
+      title: "AI Image Generator",
+      description: "Create stunning visuals with our Gemini-powered AI",
+      features: ["Multi-image generation", "Interactive chatbox", "25+ predefined prompts"]
+    },
+    {
+      icon: FiCalendar,
+      title: "Smart Scheduling",
+      description: "AI-powered timing for maximum engagement",
+      features: ["Optimal posting times", "Multi-platform support", "Automated queue"]
+    },
+    {
+      icon: FiCpu,
+      title: "AI Content Creation",
+      description: "Generate engaging content automatically",
+      features: ["Platform optimization", "Brand voice consistency", "Trend analysis"]
+    },
+    {
+      icon: FiEdit,
+      title: "Professional Editor",
+      description: "Complete image editing suite with AI enhancements",
+      features: ["Advanced editing tools", "Custom templates", "Brand assets"]
+    },
+    {
+      icon: FiTarget,
+      title: "Content Capture",
+      description: "Save and schedule content from anywhere",
+      features: ["One-click save", "Auto categorization", "Smart tagging"]
+    },
+    {
+      icon: FiFolder,
+      title: "Content Management",
+      description: "Organize and analyze your content strategy",
+      features: ["Analytics dashboard", "Content calendar", "Performance metrics"]
+    }
+  ];
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -263,44 +303,7 @@ const BrowserExtension = () => {
             className="bg-gradient-to-br from-electric-purple/10 to-ai-blue/10 rounded-2xl p-8 mb-16"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: FiImage,
-                  title: "AI Image Generator",
-                  description: "Create stunning visuals with our Gemini-powered AI",
-                  features: ["Multi-image generation", "Interactive chatbox", "25+ predefined prompts"]
-                },
-                {
-                  icon: FiCalendar,
-                  title: "Smart Scheduling",
-                  description: "AI-powered timing for maximum engagement",
-                  features: ["Optimal posting times", "Multi-platform support", "Automated queue"]
-                },
-                {
-                  icon: FiCpu,
-                  title: "AI Content Creation",
-                  description: "Generate engaging content automatically",
-                  features: ["Platform optimization", "Brand voice consistency", "Trend analysis"]
-                },
-                {
-                  icon: FiEdit,
-                  title: "Professional Editor",
-                  description: "Complete image editing suite with AI enhancements",
-                  features: ["Advanced editing tools", "Custom templates", "Brand assets"]
-                },
-                {
-                  icon: FiTarget,
-                  title: "Content Capture",
-                  description: "Save and schedule content from anywhere",
-                  features: ["One-click save", "Auto categorization", "Smart tagging"]
-                },
-                {
-                  icon: FiFolder,
-                  title: "Content Management",
-                  description: "Organize and analyze your content strategy",
-                  features: ["Analytics dashboard", "Content calendar", "Performance metrics"]
-                }
-              ].map((feature, index) => (
+              {coreFeatures.map((feature, index) => (
                 <motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 20 }}

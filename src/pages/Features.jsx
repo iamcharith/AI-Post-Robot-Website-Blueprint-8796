@@ -38,7 +38,7 @@ const mainFeatures = [
     features: [
       'AI Post Robot Integration: Direct API integration for automated posting',
       'Professional Interface: Visual post management with bulk operations',
-      'Smart scheduling: Fixed,random,and optimal timing algorithms',
+      'Smart scheduling: Fixed, random, and optimal timing algorithms',
       'Album support: Create and schedule photo albums',
       'Instant publishing: Immediate posting capabilities'
     ],
@@ -66,7 +66,7 @@ const mainFeatures = [
       'Google Gemini Integration: Advanced AI text generation and rewriting',
       'Multiple AI Models: Support for various Gemini models with favorites system',
       'API Key Rotation: Automatic rotation for rate limit management',
-      'Custom Prompts: 4 default rewrite prompts (Engaging,Shorten,Professional,Casual)',
+      'Custom Prompts: 4 default rewrite prompts (Engaging, Shorten, Professional, Casual)',
       'Image Analysis: AI-powered image understanding and caption generation'
     ],
     image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop'
@@ -77,10 +77,10 @@ const mainFeatures = [
     description: 'Complete image editing suite with AI-powered enhancements.',
     features: [
       'Advanced Editing: Professional image editing with AI-powered enhancements',
-      'Crop Presets: Social media optimized ratios (1:1,16:9,9:16)',
+      'Crop Presets: Social media optimized ratios (1:1, 16:9, 9:16)',
       'Watermark Support: Drag-and-drop watermark positioning',
       'Text Overlays: Custom text elements with font management',
-      'Custom Fonts: Upload and use custom fonts (.ttf,.otf,.woff,.woff2)',
+      'Custom Fonts: Upload and use custom fonts (.ttf, .otf, .woff, .woff2)',
       'Visual Tools: Interactive selection and editing with real-time feedback'
     ],
     image: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?w=600&h=400&fit=crop'
@@ -92,7 +92,7 @@ const mainFeatures = [
     features: [
       'Category Organization: Organize content by custom categories',
       'Bulk Operations: Select and manage multiple posts simultaneously',
-      'Export/Import: CSVexport andimport capabilities',
+      'Export/Import: CSV export and import capabilities',
       'Statistics: Monitor performance and capture analytics',
       'Media Library: Efficient storage and retrieval system'
     ],
@@ -103,7 +103,7 @@ const mainFeatures = [
 const Features = () => {
   return (
     <div className="pt-16">
-      {/* New Hero Section */}
+      {/* Hero Section */}
       <section className="bg-hero-gradient text-white section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -274,7 +274,7 @@ const Features = () => {
         </div>
       </section>
 
-      {/* Original Content: Complete Feature Breakdown */}
+      {/* Feature Breakdown */}
       <section className="section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
